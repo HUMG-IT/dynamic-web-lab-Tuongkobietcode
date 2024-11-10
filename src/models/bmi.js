@@ -14,3 +14,25 @@
 //    - BMI từ 30 trở lên là "Béo phì".
 
 // Xuất các hàm calculateBMI và classifyBMI
+// Route tính toán BMI và phân loại
+// Hàm tính BMI
+function calculateBMI(weight, height) {
+    const heightInMeters = height / 100;  // Chuyển chiều cao từ cm sang mét
+    return weight / (heightInMeters * heightInMeters);  // Công thức tính BMI
+  }
+  
+  // Hàm phân loại BMI
+  function classifyBMI(bmi) {
+    if (bmi < 18.5) {
+      return 'Gầy';
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+      return 'Bình thường';
+    } else if (bmi >= 25 && bmi < 29.9) {
+      return 'Thừa cân';
+    } else {
+      return 'Béo phì';
+    }
+  }
+  
+  module.exports = { calculateBMI, classifyBMI };
+  

@@ -21,7 +21,9 @@ const names = []; // Mảng lưu trữ các tên được thêm vào
  * // Sau khi thêm, mảng names sẽ là ["John"]
  */
 const addName = (name) => {
-    names.push(name); // Thêm tên vào cuối mảng names
+    if (name && typeof name === 'string' && name.trim() !== '') {
+        names.push(name); // Thêm tên vào cuối mảng names
+    }
 };
 
 /**
